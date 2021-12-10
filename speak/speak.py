@@ -6,12 +6,10 @@ class Speak(commands.Cog):
         self.bot = bot
         
     @commands.command()
-    @commands.has_permissions(manage_messages=True)
     async def plswork(self, ctx):
         await ctx.reply("Should work.")
         
     @commands.command()
-    @commands.has_permissions(manage_messages=True)
     async def speak(self, ctx, channel: discord.TextChannel, *, message: str):
         await channel.send(message)
 
