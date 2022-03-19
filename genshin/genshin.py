@@ -57,6 +57,8 @@ class Genshin(commands.Cog):
             - now.utcoffset()
         )
         delta = utc_time_for_tz_loop - datetime.datetime.utcnow()
+        if delta > datetime.timedelta(days=1):
+            delta -= datetime.timedelta(days=1)
         return humanize.time.precisedelta(delta, minimum_unit="minutes", format="%0.f")
 
     @staticmethod
@@ -83,6 +85,8 @@ class Genshin(commands.Cog):
             - now.utcoffset()
         )
         delta = utc_time_for_tz_loop - datetime.datetime.utcnow()
+        if delta > datetime.timedelta(days=1):
+            delta -= datetime.timedelta(days=1)
         return humanize.time.precisedelta(delta, minimum_unit="minutes", format="%0.f")
 
     @staticmethod
@@ -108,6 +112,8 @@ class Genshin(commands.Cog):
             )
         )
         delta = pytz.timezone("Europe/Dublin").localize(time_for_4_am) - datetime.datetime.now(pytz.timezone("Europe/Dublin"))
+        if delta > datetime.timedelta(days=1):
+            delta -= datetime.timedelta(days=1)
         return humanize.time.precisedelta(delta, minimum_unit="minutes", format="%0.f")
 
     @staticmethod
