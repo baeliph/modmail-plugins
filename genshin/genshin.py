@@ -108,7 +108,7 @@ class Genshin(commands.Cog):
         now = datetime.datetime.now(pytz.timezone("Europe/Dublin"))
         time_for_4_am: datetime.datetime = (
             datetime.datetime.combine(
-                now.date() + datetime.timedelta(days=0), datetime.time(hour=4)
+                now.date() + datetime.timedelta(days=1), datetime.time(hour=4)
             )
         )
         delta = pytz.timezone("Europe/Dublin").localize(time_for_4_am) - datetime.datetime.now(pytz.timezone("Europe/Dublin"))
