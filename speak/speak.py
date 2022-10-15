@@ -13,6 +13,6 @@ class Speak(commands.Cog):
     async def speak(self, ctx, channel: discord.TextChannel, *, message: str):
         await channel.send(message)
 
-def setup(bot):
+async def setup(bot):
     cog = Speak(bot)
-    bot.add_cog(cog)
+    await bot.add_cog(cog)

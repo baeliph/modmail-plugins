@@ -37,6 +37,6 @@ class GetUsers(commands.Cog):
         for users_batch in batch(users, 50):
             await ctx.channel.send("\n".join(users_batch))
 
-def setup(bot):
+async def setup(bot):
     cog = GetUsers(bot)
-    bot.add_cog(cog)
+    await bot.add_cog(cog)
